@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scae=1.0">
+    <title>secure photo page</title>
+<style>
+    body {
+        font-family: arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        background: #fff;
+        transition: background-color 0.5s, color 0.5s;
+    }
+    img {
+        max-width: 80%;
+        margin-top: 50px;
+    }
+    .password-container {
+        margin-top: 20px;
+        font-size: 16px;
+    }
+    .password-input {
+        padding: 10px;
+        font-size: 16px;
+    }
+    .submit-button {
+        padding: 10px 20px;
+        font-size: 16px;
+        margin-left: 10px;
+    }
+    .darkened {
+        background-color: #000;
+        color: #fff;
+    }
+</style>
+</head>
+<body>
+    <h1>photo with password</h1>
+    <img src="https://imgur.com/a/5oezzYM" alt="photo">
+    <div class="password-container">
+        <input type="password" class="password-input" id="password" placeholder="Enter password">
+        <button class="submit-button" onclick="checkpassword()">submit</button>
+    </div>
+    <script>
+        const correctpassword = "pgevent"; // set your password here
+
+        function checkpassword() {
+            const userInput = document.getElementById("password").value;
+            if (userInput === correctpassword) {
+                document.body.classlist.add("darkened");
+            } else {
+                alert("Incorrect password. Try again.");
+            }
+        }
+    </script> 
+</body>
+</html>
